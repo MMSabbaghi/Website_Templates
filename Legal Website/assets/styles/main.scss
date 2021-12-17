@@ -1,0 +1,281 @@
+@import "common/global";
+@import "common/mixins";
+@import "common/btn";
+
+.main-header {
+  background: url("/assets/images/background.jpg") #f3f3f3 no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-height: 752px;
+}
+
+.main-nav {
+  @include row;
+  gap: 8.4rem;
+  height: 104px;
+
+  &__items {
+    @include row;
+    gap: 2.1rem;
+    color: $second-text-color !important;
+  }
+
+  &__link {
+    color: $second-text-color;
+  }
+
+  &__icon {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+.intro {
+  .intro-content {
+    margin-top: 8rem;
+    @include column;
+    gap: 3.5rem;
+
+    &__title {
+      font-size: 5.8rem;
+      font-weight: 900;
+      line-height: 6.5rem;
+    }
+
+    &__text {
+      color: $second-text-color;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 3rem;
+    }
+
+    &__btns {
+      gap: 1rem;
+    }
+  }
+
+  .intro-cards {
+    display: flex;
+    align-items: stretch;
+    gap: 3rem;
+
+    .intro-card {
+      background-color: #fff;
+      padding: 3rem;
+      flex-basis: 100%;
+      position: relative;
+      bottom: -100px;
+      box-shadow: $muted-color 0 1rem 1rem;
+      &--active {
+        padding: 3rem;
+        background-color: $secondary-color-4;
+        color: $light-text-color;
+      }
+
+      &__title {
+        @include margin-y(0.8rem);
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+      }
+
+      &__text {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 5rem;
+  }
+  &__text {
+    margin: auto;
+    width: 40%;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+}
+
+.info {
+  @include padding-y(10rem);
+  background-color: #fafafa;
+
+  .info-cards {
+    display: flex;
+    align-items: stretch;
+    gap: 3.5rem;
+
+    .info-card {
+      flex-basis: 100%;
+      text-align: center;
+      padding: 3rem 3.8rem;
+      background-color: #fff;
+
+      &__title {
+        @include margin-y(1rem);
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 5rem;
+      }
+      &__text {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        color: $second-text-color;
+      }
+    }
+  }
+}
+
+.about {
+  @include padding-y(10rem);
+
+  .about-body {
+    @include margin-y(10rem);
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 12rem;
+
+    .about-content {
+      @include column;
+      gap: 3rem;
+
+      &__title {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 5rem;
+      }
+      &__text {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2rem;
+        color: $second-text-color;
+      }
+      &__card {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: repeat(2, 1fr);
+
+        img {
+          grid-row: 1/3;
+        }
+
+        h5 {
+          font-weight: 700;
+          line-height: 2.4rem;
+        }
+
+        h6 {
+          font-size: 1.4rem;
+          font-weight: 700;
+          line-height: 2.4rem;
+          color: $second-text-color;
+        }
+      }
+    }
+  }
+}
+
+.main-footer {
+  background-color: #fafafa;
+
+  .container {
+    min-height: 74px;
+    @include row;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+  }
+
+  &__icons {
+    @include row;
+    gap: 2rem;
+  }
+}
+
+//*Meadia Query
+@media screen and (max-width: 768px) {
+  .main-header {
+    background-image: none;
+  }
+
+  .main-nav {
+    &__items {
+      display: none;
+    }
+    &__icon {
+      display: initial;
+    }
+  }
+
+  .intro {
+    .intro-content {
+      text-align: center;
+
+      &__btns {
+        @include column;
+        gap: 2.5rem;
+      }
+
+      &__title {
+        font-size: 4rem;
+      }
+
+      &__text {
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .intro-cards {
+      @include column;
+    }
+  }
+
+  .section-header {
+    &__text {
+      width: 100%;
+    }
+  }
+
+  .info {
+    padding-top: 20rem;
+
+    .info-cards {
+      @include column;
+    }
+  }
+
+  .about {
+    .about-body {
+      @include column;
+      gap: 5rem;
+    }
+  }
+
+  .main-footer {
+    @include padding-y(5rem);
+    text-align: center;
+
+    .container {
+      @include column;
+      gap: 2.5rem;
+    }
+  }
+}
