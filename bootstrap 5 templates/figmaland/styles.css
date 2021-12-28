@@ -1,0 +1,59 @@
+:root {
+  --primary-color: #4452fe;
+}
+
+.bg-dark {
+  background: #181818;
+}
+
+.btn {
+  border-radius: 0px;
+  padding: 14px 46px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.main-nav .navbar-nav {
+  gap: 25px;
+}
+
+.main-nav .nav-link {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.showcase img {
+  width: 100%;
+}
+
+.showcase-content {
+  padding: 85px 0;
+}
+
+.showcase-content h1 {
+  max-width: 700px;
+  margin-bottom: 17px;
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 88px;
+}
+
+.showcase-content p {
+  max-width: 650px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.showcase-btns {
+  gap: 35px;
+  padding: 35px;
+}
+
+.showcase-btns .btn {
+  width: fit-content;
+}
